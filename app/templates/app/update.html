@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %} {% block content %}
+<div class="row">
+  <div class="col-sm-6 offset-3">
+    <h2 class="text-center alert alert-danger">Update Student Details</h2>
+    <form action="" method="post" novalidate>
+      {% csrf_token %} {% for fm in form %} {{fm.label_tag}}<br />
+      {{fm}}<br />
+      {{fm.errors}}<br />
+      {% endfor %}
+      <input value="Update" type="submit" class="btn btn-success" />
+    </form>
+    <br />
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'app/base.html' %} {% block content %}
+<div class="row">
+  <div class="col-sm-6 offset-3">
+    <h2 class="text-center alert alert-info">Enter Student Details</h2>
+
+    <form action="" method="post" novalidate>
+      {% csrf_token %} {% for fm in form %} {{fm.label_tag}}<br />
+      {{fm}}<br />
+      {{fm.errors}}<br />
+      {% endfor %}
+      <input value="Submit" type="submit" class="btn btn-success" />
+    </form>
+    <br />
+    <a href="{% url 'show' %}">
+      <input type="submit" value="Show Data" class="btn btn-info" />
+    </a>
+  </div>
+  <div style="margin-top: 12px">
+    <a href="{% url 'logout' %}">
+      <input type="submit" class="btn btn-danger" value="Logout" />
+    </a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'app/base.html' %} {% block content %}
+<div class="row">
+  <div class="col-sm-6 offset-3">
+    <h2 class="text-center alert alert-info">SignUp Here</h2>
+    <form action="" method="post" novalidate>
+      {% csrf_token %} {% for fm in form %} {{fm.label_tag}}<br />
+      {{fm}}<br />
+      {{fm.errors}}<br />
+      {% endfor %}
+      <input type="submit" value="SignUp" class="btn btn-success" />
+    </form>
+    <br />
+    <a href="{% url 'login' %}">
+      <input type="submit" value="Login" class="btn btn-info" />
+    </a>
+  </div>
+</div>
+{% endblock %}
